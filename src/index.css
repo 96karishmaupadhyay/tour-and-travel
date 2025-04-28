@@ -1,0 +1,94 @@
+@import "tailwindcss";
+theme{
+  --color-primary:#d97706;
+  --color-secondary:#fef3c7;
+}
+.nav-links{
+  position: relative;
+  display: inline-block;
+}
+@keyframes hoverEffect {
+  0%{
+    width: 0;
+   
+  }
+  100%{
+    width: 100%;
+   
+  }
+}
+.nav-links::after{
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  background: orange;
+  height: 2px;
+  width: 0;
+  transition: width 1s ease; 
+}
+.nav-links:hover::after{
+animation: hoverEffect 1s forwards;
+}
+.left-arrow, .right-arrow{
+position: absolute;
+top: 50%;
+z-index: 99;
+}
+.right-arrow{
+right: 10px;
+
+}
+.left-arrow{
+  left: 10px;
+ 
+}
+.hero-text{
+  font-size: 64px;
+  font-weight: bold;
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  color: transparent;
+  -webkit-text-stroke: #d97706 2px;
+  
+}
+@media (max-width:720px) {
+  .hero-text{
+    font-size: 48px;
+  }
+}
+.card{
+  position: relative;
+
+}
+.tooltip{
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  color: #d97706;
+  display: none;
+  font-weight: 700;
+}
+.card:hover .tooltip{
+display: block;
+}
+.about-text{
+ color: transparent;
+ -webkit-text-stroke: rgb(211, 166, 16) 2px;
+ line-height: 80px;
+ font-size: 48px;
+}
+.cnt-btn{
+  background-color: #d97706;
+  color: white;
+  padding: 4px 8px;
+  height: 40px;
+  width: 90px;
+  font-weight: 600;
+}
+.cnt-btn:hover{
+  border: 2px solid #d97706;
+  color: #d97706;
+  background-color: white;
+}
